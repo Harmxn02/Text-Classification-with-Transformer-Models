@@ -6,16 +6,11 @@ Here you will find the comparisons of all the different pre-trained models we te
 
 The models were trained locally using an NVIDIA RTX 3060 Laptop GPU (6GB VRAM), and 32GB of RAM.
 
-| Model codename               | Model in code                         | Training time (m) | (FT) Learning Rate | (FT) Epochs | (FT) Batch size | Test Accuracy | Test Loss Test | F1 Score |
-| ---------------------------- | ------------------------------------- | ----------------- | ------------------ | ----------- | --------------- | ------------- | -------------- | -------- |
-| 1. `distilbert-base-uncased` | `DistilBertForSequenceClassification` | 3m30s             | 1e-5               | 3           | 16              | 0.916         | 0.275          | 0.917    |
+> We always train 3 epochs, with a batch size of 16, and a learning rate of 1e-5. Some models I trained multiple times, so you will find the same models in the table more than once.
 
-
-
-
-<!-- I have only done 1 model so far -->
-
-<!-- | `bert-base-uncased`       | `BertForSequenceClassification`       | 6m33s             | 1e-5               | 3           | 16              | 0.901         | 0.344          | 0.901    |
-| `roberta-base`            | `RobertaForSequenceClassification`    | 6m47s             | 1e-5               | 3           | 16              | 0.850         | 0.451          | 0.850    |
-| `xlnet-base-cased`        | `XLNetForSequenceClassification`      | 9m05s             | 1e-5               | 3           | 16              | 0.856         | 0.420          | 0.856    |
-| `FINETUNED`               | `---`                                 | 8m09s             | 1e-5               | 5           | 32              | 0.823         | 0.609          | 0.823    | -->
+| Model codename                       | Training time (m) | Test Accuracy | Test Loss Test | F1 Score |
+| ------------------------------------ | ----------------- | ------------- | -------------- | -------- |
+| `distilbert/distilbert-base-uncased` | 3m30s             | 0.889         | 0.346          | 0.889    |
+| `distilbert/distilbert-base-uncased` | 3m24              | 0.897         | 0.352          | 0.897    |
+| `xlnet/xlnet-base-cased`             | 8m39              | 0.872         | 0.390          | 0.871    |
+| `google-bert/bert-base-uncased`      | 6m38              | 0.883         | 0.371          | 0.883    |
