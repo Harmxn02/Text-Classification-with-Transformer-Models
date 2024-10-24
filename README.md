@@ -1,10 +1,6 @@
 # Text Classification with Pre-Trained Transformer Models
 
-## Comparison of pre-trained models (and fine-tune [FT])
-
-Here you will find the comparisons of all the different pre-trained models we tested, and trained.
-
-The models were trained locally using an NVIDIA RTX 3060 Laptop GPU (6GB VRAM), and 32GB of RAM.
+The models were trained locally using an NVIDIA RTX 3060 Laptop GPU (6GB VRAM), and 32GB of physical RAM.
 
 > We always train 3 epochs, with a batch size of 16, and a learning rate of 1e-5. Some models I trained multiple times, so you will find the same models in the table more than once.
 
