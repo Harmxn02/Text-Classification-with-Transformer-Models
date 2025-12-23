@@ -4,20 +4,23 @@ The models were trained locally using an NVIDIA RTX 3060 Laptop GPU (6GB VRAM), 
 
 > We always train 3 epochs, with a batch size of 16, and a learning rate of 1e-5. Some models I trained multiple times, so you will find the same models in the table more than once.
 
-| Model codename                       | Training time (m) | Test Accuracy | Test Loss Test | F1 Score |
-| ------------------------------------ | ----------------- | ------------- | -------------- | -------- |
-| `distilbert/distilbert-base-uncased` | 3m30s             | 0.889         | 0.346          | 0.889    |
-| `distilbert/distilbert-base-uncased` | 3m24              | 0.897         | 0.352          | 0.897    |
-| `xlnet/xlnet-base-cased`             | 8m39              | 0.872         | 0.390          | 0.871    |
-| `google-bert/bert-base-uncased`      | 6m38              | 0.883         | 0.371          | 0.883    |
+| Model codename                       | Training time (m) | Test Accuracy | Test Loss | Test F1 Score |
+| ------------------------------------ | ----------------- | ------------- | --------- | ------------- |
+| `distilbert/distilbert-base-uncased` | 3m30s             | 0.889         | 0.346     | 0.889         |
+| `distilbert/distilbert-base-uncased` | 3m24              | 0.897         | 0.352     | 0.897         |
+| `xlnet/xlnet-base-cased`             | 8m39              | 0.872         | 0.390     | 0.871         |
+| `google-bert/bert-base-uncased`      | 6m38              | 0.883         | 0.371     | 0.883         |
 
 ## Experimental
 
 > in the `experimental.ipynb` notebook, we trained for 10 epochs, with a batch size of 32
 
-| Model codename                       | Training time (m) | Test Accuracy | Test Loss Test | F1 Score |
-| ------------------------------------ | ----------------- | ------------- | -------------- | -------- |
-| `distilbert/distilbert-base-uncased` | 10m38             | 0.970         | 0.107          | 0.970    |
+EDIT: _Way later, I also trained it for 20 epochs on a stronger machine, same batch size of 32. For this run the classification report is all `1.00`_
+
+| Model codename                         | Training time (m) | Test Accuracy | Test Loss | Test F1 Score |
+| -------------------------------------- | ----------------- | ------------- | --------- | ------------- |
+| `distilbert/distilbert-base-uncased`   | 10m38             | 0.970         | 0.107     | 0.970         |
+| `distilbert/distilbert-base-uncased`\* | 6m38              | 0.999         | 0.009     | 0.999         |
 
 ### Classification report
 
@@ -39,3 +42,13 @@ The models were trained locally using an NVIDIA RTX 3060 Laptop GPU (6GB VRAM), 
 Pretty good, no?
 
 Turns out training for a longer time improves your model's performance. Who could've guessed?
+
+## Conclusion
+
+The `distilbert/distilbert-base-uncased` model is the best model for this task. It has the best accuracy, loss, and F1 score. It is also the fastest to train, which is a huge plus.
+
+## References
+
+- [DistilBERT](https://huggingface.co/docs/transformers/model_doc/distilbert)
+- [XLNet](https://huggingface.co/docs/transformers/model_doc/xlnet)
+- [BERT](https://huggingface.co/docs/transformers/model_doc/bert)
